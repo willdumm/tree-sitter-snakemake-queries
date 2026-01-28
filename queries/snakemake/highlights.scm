@@ -307,7 +307,8 @@ body: (_
   (#any-of? @label "input" "jobid" "log" "output" "params" "resources" "rule" "threads" "wildcards"))
 
 ; directive labels in block context (eg. within 'run:')
-((identifier) @label
-  (#any-of? @label "input" "jobid" "log" "output" "params" "resources" "rule" "threads" "wildcards")
-  (#has-ancestor? @label "directive")
-  (#has-ancestor? @label "block"))
+; NOTE: #has-ancestor? is not supported by kak-tree-sitter, so this query is disabled
+; ((identifier) @label
+;   (#any-of? @label "input" "jobid" "log" "output" "params" "resources" "rule" "threads" "wildcards")
+;   (#has-ancestor? @label "directive")
+;   (#has-ancestor? @label "block"))
